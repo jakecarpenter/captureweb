@@ -68,4 +68,27 @@ CaptureWeb::Application.configure do
   # set default url for action_mailer
   config.action_mailer.default_url_options = { :host => 'captureweb.herokuapp.com' }
 
+  # Paperclip settings
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :url => ':s3_path_url',
+    :path => '/:class/:attachment/:id_partition/:style/:filename',
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => "trycapture.com",
+    :address => "smtp.sendgrid.net",
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
 end
