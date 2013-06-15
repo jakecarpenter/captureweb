@@ -34,4 +34,8 @@ CaptureWeb::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # set default url for action_mailer
+  config.action_mailer.default_url_options = { :host => 'captureweb.herokuapp.com' }
+
 end

@@ -7,11 +7,21 @@ gem 'rails', '3.2.13'
 
 group :development do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production, :test do
   gem 'pg'
 end
+
+gem 'paperclip'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'aws-sdk'
+gem 'aws-s3'
+gem 'griddler'
 
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
