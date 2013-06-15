@@ -18,6 +18,7 @@ end
 gem 'paperclip'
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'aws-sdk'
 gem 'aws-s3'
