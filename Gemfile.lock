@@ -95,6 +95,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     multipart-post (1.2.0)
+    nifty-generators (0.4.6)
     nokogiri (1.5.10)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -191,6 +192,7 @@ DEPENDENCIES
   griddler
   jquery-rails
   less-rails
+  nifty-generators
   omniauth
   omniauth-facebook
   paperclip

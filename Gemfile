@@ -22,6 +22,7 @@ gem 'omniauth-facebook'
 gem 'aws-sdk'
 gem 'aws-s3'
 gem 'griddler'
+gem 'nifty-generators'
 
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
