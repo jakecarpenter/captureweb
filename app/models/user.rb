@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :name
+  attr_accessible :username, :email, :password, :avatar, :password_confirmation, :remember_me, :provider, :uid, :name
   # attr_accessible :title, :body
+  attr_reader :avatar_remote_url
+
   attr_accessor :login
 
   attr_accessible :login
@@ -15,11 +17,18 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates_uniqueness_of :username
 
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.username = auth.info.nickname
+      user.email = auth.info.email
+      user.lastname = auth.info.last_name
+      user.firstname = auth.info.first_name
+      user.twitterusername = auth.info.nickname
+      user.avatar_from_url = auth.info.image
     end
   end
   
@@ -54,4 +63,9 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+  def avatar_remote_url=(url_value)
+    self.avatar = URI.parse(url_value)
+    @avatar_remote_url = url_value
+  end
+
 end
