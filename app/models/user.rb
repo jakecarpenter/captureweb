@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.lastname = auth.info.last_name
       user.firstname = auth.info.first_name
-      user.avatar_from_url = auth.info.image
     end
   end
   
