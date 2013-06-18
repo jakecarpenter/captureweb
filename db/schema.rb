@@ -11,7 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617025052) do
+ActiveRecord::Schema.define(:version => 20130618060842) do
+
+  create_table "captures", :force => true do |t|
+    t.string   "name"
+    t.datetime "startTime"
+    t.datetime "endTime"
+    t.integer  "creator"
+    t.string   "description"
+    t.integer  "visibility"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "cards", :force => true do |t|
+    t.string   "name"
+    t.integer  "serviceId"
+    t.datetime "serviceTime"
+    t.integer  "contributor"
+    t.integer  "visibility"
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "contributor"
+    t.string   "content"
+    t.integer  "card_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "comments", ["card_id"], :name => "index_comments_on_card_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

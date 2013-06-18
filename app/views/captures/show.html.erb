@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @capture.name %>
+</p>
+
+<p>
+  <b>Starttime:</b>
+  <%= @capture.startTime %>
+</p>
+
+<p>
+  <b>Endtime:</b>
+  <%= @capture.endTime %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%= @capture.creator %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @capture.description %>
+</p>
+
+<p>
+  <b>Visibility:</b>
+  <%= @capture.visibility %>
+</p>
+
+
+<%= link_to 'Edit', edit_capture_path(@capture) %> |
+<%= link_to 'Back', captures_path %>

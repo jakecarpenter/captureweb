@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @card.name %>
+</p>
+
+<p>
+  <b>Serviceid:</b>
+  <%= @card.serviceId %>
+</p>
+
+<p>
+  <b>Servicetime:</b>
+  <%= @card.serviceTime %>
+</p>
+
+<p>
+  <b>Contributor:</b>
+  <%= @card.contributor %>
+</p>
+
+<p>
+  <b>Visibility:</b>
+  <%= @card.visibility %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @card.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @card.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

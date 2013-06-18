@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  serviceId: 1
+  serviceTime: 2013-06-17 22:56:31
+  contributor: 1
+  visibility: 1
+  title: MyString
+  content: MyString
+
+two:
+  name: MyString
+  serviceId: 1
+  serviceTime: 2013-06-17 22:56:31
+  contributor: 1
+  visibility: 1
+  title: MyString
+  content: MyString

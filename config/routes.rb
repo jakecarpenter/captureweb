@@ -1,4 +1,13 @@
 CaptureWeb::Application.routes.draw do
+  resources :comments
+
+
+  resources :captures
+
+
+  resources :cards
+
+
   get "home/index"
 
   devise_for :users, path_names: {sign_in: "login", sign_up: "signup", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
